@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'cook-for-mom',
+    modulePrefix: 'karma-signup',
     environment,
     rootURL: '/',
     locationType: 'auto',
