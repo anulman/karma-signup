@@ -2733,6 +2733,22 @@ ember-cli-meta-tags@^4.0.0:
     ember-cli-htmlbars "^1.1.1"
     ember-runtime-enumerable-includes-polyfill "^2.0.0"
 
+ember-cli-moment-shim@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-moment-shim/-/ember-cli-moment-shim-3.6.0.tgz#a6ce858e99b285eb9c539c8cebb698435f8d043a"
+  dependencies:
+    broccoli-funnel "^2.0.0"
+    broccoli-merge-trees "^2.0.0"
+    broccoli-source "^1.1.0"
+    broccoli-stew "^1.5.0"
+    chalk "^1.1.3"
+    ember-cli-babel "^6.6.0"
+    ember-cli-import-polyfill "^0.2.0"
+    exists-sync "^0.0.4"
+    lodash.defaults "^4.2.0"
+    moment "^2.19.3"
+    moment-timezone "^0.5.13"
+
 ember-cli-node-assets@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/ember-cli-node-assets/-/ember-cli-node-assets-0.2.2.tgz#d2d55626e7cc6619f882d7fe55751f9266022708"
@@ -3166,6 +3182,14 @@ ember-metrics@^0.12.1:
     ember-cli-babel "^6.1.0"
     ember-getowner-polyfill "^2.0.0"
     ember-runtime-enumerable-includes-polyfill "^2.0.0"
+
+"ember-moment@github:stefanpenner/ember-moment":
+  version "7.6.0"
+  resolved "https://codeload.github.com/stefanpenner/ember-moment/tar.gz/b8a262b3ac4084510f439ab905a136b8b5f0fca5"
+  dependencies:
+    ember-cli-babel "^6.7.2"
+    ember-getowner-polyfill "^2.0.1"
+    ember-macro-helpers "^0.17.0"
 
 ember-popper@^0.8.3:
   version "0.8.3"
@@ -3601,7 +3625,7 @@ exists-sync@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/exists-sync/-/exists-sync-0.0.3.tgz#b910000bedbb113b378b82f5f5a7638107622dcf"
 
-exists-sync@0.0.4:
+exists-sync@0.0.4, exists-sync@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/exists-sync/-/exists-sync-0.0.4.tgz#9744c2c428cc03b01060db454d4b12f0ef3c8879"
 
@@ -5283,6 +5307,10 @@ lodash.debounce@^3.1.1:
   dependencies:
     lodash._getnative "^3.0.0"
 
+lodash.defaults@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
+
 lodash.defaults@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-2.3.0.tgz#a832b001f138f3bb9721c2819a2a7cc5ae21ed25"
@@ -5721,6 +5749,16 @@ mkdirp@^0.3.5:
 mktemp@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/mktemp/-/mktemp-0.4.0.tgz#6d0515611c8a8c84e484aa2000129b98e981ff0b"
+
+moment-timezone@^0.5.13:
+  version "0.5.14"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.14.tgz#4eb38ff9538b80108ba467a458f3ed4268ccfcb1"
+  dependencies:
+    moment ">= 2.9.0"
+
+"moment@>= 2.9.0", moment@^2.19.3:
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.21.0.tgz#2a114b51d2a6ec9e6d83cf803f838a878d8a023a"
 
 morgan@^1.8.1:
   version "1.9.0"
