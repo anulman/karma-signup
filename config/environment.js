@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'karma-signup',
+    podModulePrefix: 'karma-signup/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
