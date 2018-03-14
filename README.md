@@ -1,7 +1,8 @@
 # karma-signup
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This webpage is used to inform and sign up prospective Karma Co-op members.
+
+All code shared publicly on Github is intended to be licensed under the MIT license. All site material will be considered copyrighted materials. A `LICENSE` file will be published soon.
 
 ## Prerequisites
 
