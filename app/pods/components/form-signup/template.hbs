@@ -1,0 +1,45 @@
+{{#if (or (not didSubmit) didReset)}}
+  {{yield (hash
+    header=(component headerComponent)
+    main=(component mainComponent tagName='fieldset')
+    footer=(component footerComponent)
+    keydown=(action keydown)
+    submit=(action submit)
+  )}}
+{{else}}
+  {{#component headerComponent}}
+    Thank you for joining!<br />
+    We are excited to have you trial shop with us.<br />
+    Please join us on:
+  {{/component}}
+
+  {{#component mainComponent tagName='ul' class='list-inline text-center'}}
+    <li class='list-inline-item'>
+      <a href='https://instagram.com/karmacooptoronto' target='_blank'>
+        <img src='assets/images/social/instagram.png'>
+      </a>
+    </li>
+
+    <li class='list-inline-item'>
+      <a href='https://facebook.com/Karma.Coop' target='_blank'>
+        <img src='assets/images/social/facebook.png'>
+      </a>
+    </li>
+  {{/component}}
+
+  {{#component footerComponent class='mt-4'}}
+    {{#if canReset}}
+      <button class='btn btn-link text-secondary align-baseline' type='button'
+        onclick={{action (mut didReset) true}}>
+        Reset
+      </button>
+
+      or
+    {{/if}}
+
+    <button class='btn bg-primary btn-outline-primary text-white' type='button'
+      onclick={{action share 'facebook'}}>
+      Share on Facebook
+    </button>
+  {{/component}}
+{{/if}}
