@@ -1,0 +1,39 @@
+@mixin skew-on-hover {
+  transform: none;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: skew(2deg) rotate(-5deg);
+    cursor: pointer;
+  }
+}
+
+@mixin action-on-hover($cta) {
+  &::after {
+    content: $cta;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    background: transparentize($primary, 0.6);
+    color: $dark;
+    text-shadow: 1px 1px $light;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
