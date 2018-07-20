@@ -3,14 +3,13 @@ export default function headTags() {
     type: 'title',
     tagId: 'title',
     content: 'Join us at Karma Co-op'
-    // todo do we have an app id?
-  // }, {
-    // type: 'meta',
-    // tagId: 'meta-fb-app_id',
-    // attrs: {
-      // property: 'fb:app_id',
-      // content: ''
-    // }
+  }, {
+    type: 'meta',
+    tagId: 'meta-fb-app_id',
+    attrs: {
+      property: 'fb:app_id',
+      content: '580686912296349'
+    }
   }, {
     type: 'meta',
     tagId: 'meta-twitter-card',
@@ -18,14 +17,13 @@ export default function headTags() {
       name: 'twitter:card',
       content: 'summary_large_image'
     }
-    // todo what is our twitter?
-  // }, {
-    // type: 'meta',
-    // tagid: 'meta-twitter-site',
-    // attrs: {
-      // name: 'twitter:site',
-      // content: '@'
-    // }
+  }, {
+    type: 'meta',
+    tagid: 'meta-twitter-site',
+    attrs: {
+      name: 'twitter:site',
+      content: '@KarmaCoop'
+    }
   }, {
     type: 'meta',
     tagid: 'meta-og-url',
@@ -47,22 +45,20 @@ export default function headTags() {
       property: 'og:type',
       content: 'website'
     }
-    // todo what is share img?
-  // }, {
-    // type: 'meta',
-    // tagid: 'meta-og-image',
-    // attrs: {
-      // property: 'og:image',
-      // content: ''
-    // }
-    // todo do we have share img alt?
-  // }, {
-    // type: 'meta',
-    // tagid: 'meta-og-image-alt',
-    // attrs: {
-      // property: 'og:image:alt',
-      // content: ''
-    // }
+  }, {
+    type: 'meta',
+    tagid: 'meta-og-image',
+    attrs: {
+      property: 'og:image',
+      content: 'https://karmacoop.org/wefc/assets/images/trial-card.png'
+    }
+  }, {
+    type: 'meta',
+    tagid: 'meta-og-image-alt',
+    attrs: {
+      property: 'og:image:alt',
+      content: 'Karma Co-op Trial Shop Card'
+    }
     // todo what is share tagline?
   // }, {
     // type: 'meta',
