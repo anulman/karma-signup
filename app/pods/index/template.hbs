@@ -1,0 +1,188 @@
+{{#index/hero-header class='container text-center' as |hero|}}
+  {{#hero.header}}
+    <h1>Special two-month trial shop at Karma Co-op for WEFC members:</h1>
+    <h2>Fill out your name and email address below to receive your downloadable card today.</h2>
+    <p class='container col-10 col-sm-8 small text-dark'>We are very sad to hear that the West End Food Co-op will be closing its doors at the end of July. Your co-op and Karma share similar values and love for local, organic and ethical groceries and we want you to know we are here for you.</p>
+    <p class='container col-10 col-sm-8 small text-dark'>We’re welcoming all WEFC members at our co-op with a free two-month trial shop that you can get right here.</p>
+  {{/hero.header}}
+
+  {{#hero.main class='container col-sm-6'}}
+    <img class='img-fluid' src='assets/images/trial-card.png'
+      onclick={{action focusForm 'hero-image'}} />
+
+    <p class='small'>
+      This Trial Shop card entitles you to shop at Karma Co-operative at our lowest member prices for two months (15% off our non-member price) with no obligations. First and last name is required to redeem your trial. Trial shop periods commence at the time of your first shop. Presentation of this voucher is required in order to redeem. One trial per person, no cash value.
+    </p>
+  {{/hero.main}}
+
+  {{#hero.footer class='container col-10 col-sm-8'}}
+    {{#form-signup
+      didSubmit=(readonly application.didSubmit)
+      share=(action application.share application (hash
+        platform='facebook'
+        source='wefc:hero-form'
+      ))
+      onSubmit=(action application.submit application (hash
+        name=application.name
+        email=application.email
+      )) as |form|}}
+      {{#form.header}} Want to be the first to find out about in-store events, new product arrivals and co-op news? Join our mailing list below to stay in touch. {{/form.header}}
+      {{#form.main class='container col-sm-8 d-flex flex-column justify-space-between'}}
+        <input class='form-control {{unless (or (eq application.name.length 0) (eq focusedInput 'hero:name') (v-get application 'name' 'isValid')) 'is-invalid'}}'
+          placeholder='Name'
+          value={{application.name}}
+          onfocus={{action (mut focusedInput) 'hero:name'}}
+          onblur={{action (mut focusedInput) null}}
+          oninput={{action (mut application.name) value='target.value'}} />
+
+        {{#unless (or (eq application.name.length 0) (eq focusedInput 'hero:name') (v-get application 'name' 'isValid'))}}
+          <div class='invalid-feedback'>
+            {{v-get application 'name' 'message'}}
+          </div>
+        {{/unless}}
+
+        <input class='form-control {{unless (or (eq application.email.length 0) (eq focusedInput 'hero:email') (v-get application 'email' 'isValid')) 'is-invalid'}}'
+          placeholder='Email'
+          value={{application.email}}
+          oninput={{action (mut application.email) value='target.value'}}
+          onfocus={{action (mut focusedInput) 'hero:email'}}
+          onblur={{action (mut focusedInput) null}}
+          onkeydown={{action form.keydown}} />
+
+        {{#unless (or (eq application.email.length 0) (eq focusedInput 'hero:email') (v-get application 'email' 'isValid'))}}
+          <div class='invalid-feedback'>
+            {{v-get application 'email' 'message'}}
+          </div>
+        {{/unless}}
+
+        <button class='btn w-100 bg-primary btn-outline-primary text-white' type='button'
+          disabled={{v-get application 'isTruelyInvalid'}}
+          onclick={{action form.submit}}>
+          Sign me up
+        </button>
+      {{/form.main}}
+    {{/form-signup}}
+  {{/hero.footer}}
+{{/index/hero-header}}
+
+{{#index/section-infographics tagName='section' class='container text-center' as |infographics|}}
+  {{#infographics.header}}
+    <h1>New to Karma?</h1>
+    <h2 class='col-10 offset-1 col-sm-8 offset-sm-2'>Check out our brand new infographics to learn more about our membership structure, how to join the co-op as a member, and what Karma is all about.</h2>
+  {{/infographics.header}}
+
+  {{#infographics.main class='d-sm-flex'}}
+    {{#each infographics.images as |image index|}}
+      <div class='card {{if (not (eq index 0)) 'ml-sm-4 mt-4 mt-sm-0'}}' onclick={{action infographics.clickImage image}}>
+        <img class='card-img-top img-fluid' src={{image.thumbUrl}} alt={{image.alt}} />
+        <div class='card-body d-md-none'>
+          <p class='card-text text-center'> {{image.name}} </p>
+        </div>
+      </div>
+    {{/each}}
+  {{/infographics.main}}
+{{/index/section-infographics}}
+
+{{#index/section-community tagName='section' class='container text-center'
+  didSubmit=(readonly application.didSubmit)
+  share=(action application.share application)
+  focusForm=(action focusForm) as |community|}}
+  {{#community.header}}
+    <h1>Karma is more than a Grocery Store, we are a Community.</h1>
+    <h2 class='col-10 offset-1 col-sm-8 offset-sm-2'>Get to know our members and what they're passionate about through our I Am Karma campaign, and stop by our store to see us in action!</h2>
+  {{/community.header}}
+
+  {{#community.main class='row align-items-center'}}
+    <div class='col-sm-4 d-sm-flex flex-column justify-space-between'>
+      {{#community.slider
+        class='mb-sm-3 people'
+        autoPlay=true
+        keyboard=false
+        showControls=false
+        showIndicators=true
+        click=(action community.onClickTrigger 'people') as |car|}}
+        {{#each community.slides.people as |slide|}}
+          {{#car.slide}}
+            <img class='img-fluid' src={{slide.url}} alt={{slide.alt}} />
+          {{/car.slide}}
+        {{/each}}
+      {{/community.slider}}
+
+      {{#community.slider
+        class='mt-4 mt-sm-3 benefits'
+        autoPlay=true
+        keyboard=false
+        showControls=false
+        showIndicators=true
+        click=(action community.onClickTrigger 'benefits') as |car|}}
+        {{#each community.slides.benefits as |slide|}}
+          {{#car.slide}}
+            <img class='img-fluid' src={{slide.url}} alt={{slide.alt}} />
+          {{/car.slide}}
+        {{/each}}
+      {{/community.slider}}
+    </div>
+
+    <div class='col-sm-8 mt-4 mt-sm-0'>
+      <div class='map-container' onclick={{action community.onClickTrigger 'map'}}>
+        <img class='img-fluid' src='assets/images/map-animated.gif' alt='Interactive map to Karma Co-op' />
+      </div>
+    </div>
+  {{/community.main}}
+{{/index/section-community}}
+
+{{#index/section-conclusion tagName='section' class='container text-center' as |conclusion|}}
+  {{#conclusion.header}}
+    <h1>See you at Karma!</h1>
+  {{/conclusion.header}}
+
+  {{#conclusion.main class='container col-10 col-sm-8'}}
+    {{#form-signup
+      didSubmit=(readonly application.didSubmit)
+      canReset=false
+      share=(action application.share application (hash
+        platform='facebook'
+        source='wefc:conclusion-form'
+      ))
+      onSubmit=(action application.submit application (hash
+        name=application.name
+        email=application.email
+      )) as |form|}}
+      {{#form.header}} If you've made it this far, you belong with us. Join our mailing list below to stay in touch. {{/form.header}}
+      {{#form.main class='container col-sm-8 d-flex flex-column justify-space-between'}}
+        <input class='form-control {{unless (or (eq application.name.length 0) (eq focusedInput 'conclusion:name') (v-get application 'name' 'isValid')) 'is-invalid'}}'
+          placeholder='Name'
+          value={{application.name}}
+          onfocus={{action (mut focusedInput) 'conclusion:name'}}
+          onblur={{action (mut focusedInput) null}}
+          oninput={{action (mut application.name) value='target.value'}} />
+
+        {{#unless (or (eq application.name.length 0) (eq focusedInput 'conclusion:name') (v-get application 'name' 'isValid'))}}
+          <div class='invalid-feedback'>
+            {{v-get application 'name' 'message'}}
+          </div>
+        {{/unless}}
+
+        <input class='form-control {{unless (or (eq application.email.length 0) (eq focusedInput 'conclusion:email') (v-get application 'email' 'isValid')) 'is-invalid'}}'
+          placeholder='Email'
+          value={{application.email}}
+          oninput={{action (mut application.email) value='target.value'}}
+          onfocus={{action (mut focusedInput) 'conclusion:email'}}
+          onblur={{action (mut focusedInput) null}}
+          onkeydown={{action form.keydown}} />
+
+        {{#unless (or (eq application.email.length 0) (eq focusedInput 'conclusion:email') (v-get application 'email' 'isValid'))}}
+          <div class='invalid-feedback'>
+            {{v-get application 'email' 'message'}}
+          </div>
+        {{/unless}}
+
+        <button class='btn w-100 bg-primary btn-outline-primary text-white' type='button'
+          disabled={{v-get application 'isTruelyInvalid'}}
+          onclick={{action form.submit}}>
+          Sign me up
+        </button>
+      {{/form.main}}
+    {{/form-signup}}
+  {{/conclusion.main}}
+{{/index/section-conclusion}}

@@ -1,0 +1,15 @@
+{{yield (hash
+  header=(component headerComponent)
+  main=(component mainComponent)
+  images=images
+  clickImage=(action clickImage)
+)}}
+
+{{#if activeImage}}
+  {{#bs-modal
+    onHidden=(action (mut activeImage) null) as |modal|}}
+    {{#modal.body}}
+      <img class='img-fluid' src={{activeImage.url}} alt={{activeImage.alt}} />
+    {{/modal.body}}
+  {{/bs-modal}}
+{{/if}}

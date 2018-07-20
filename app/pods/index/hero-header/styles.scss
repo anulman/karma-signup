@@ -1,0 +1,28 @@
+& {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > :first-child {
+    margin-bottom: 1rem;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+img {
+  @include skew-on-hover;
+}
