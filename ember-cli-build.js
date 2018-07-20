@@ -8,7 +8,7 @@ module.exports = function(defaults) {
       'bootstrapVersion': 4,
       'importBootstrapFont': false,
       'importBootstrapCSS': false,
-      'insertEmberWormholeElementToDom': false
+      'insertEmberWormholeElementToDom': true
     },
     prember: {
       baseRoot: 'https://karmacoop.org',
