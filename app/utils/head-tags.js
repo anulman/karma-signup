@@ -50,7 +50,7 @@ export default function headTags() {
     tagid: 'meta-og-image',
     attrs: {
       property: 'og:image',
-      content: 'https://karmacoop.org/wefc/assets/images/trial-card.png'
+      content: 'https://karmacoop.org/shopcoop/assets/images/trial-card.png'
     }
   }, {
     type: 'meta',
