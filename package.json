@@ -42,7 +42,6 @@
     "ember-data": "~3.0.0",
     "ember-export-application-global": "^2.0.0",
     "ember-fingerprintjs2": "^0.0.3",
-    "ember-full-story": "^0.1.1",
     "ember-is-mobile": "^2.0.5",
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",

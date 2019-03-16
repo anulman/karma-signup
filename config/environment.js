@@ -75,12 +75,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV['ember-full-story'] = {
-      enabledEnvironments: ['production'],
-      host: 'www.fullstory.com',
-      namespace: 'FS',
-      org: 'B22AD'
-    }
+    // nop
   }
 
   return ENV;
