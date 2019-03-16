@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'karma-signup',
     podModulePrefix: 'karma-signup/pods',
     environment,
-    rootURL: '/shopcoop/',
+    rootURL: '/old_discover/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {

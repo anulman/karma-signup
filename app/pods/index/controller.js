@@ -8,7 +8,7 @@ export default Controller.extend({
   focusForm(trigger) {
     this.get('metrics').trackEvent('Segment', {
       event: 'click-to-focus',
-      source: `shopcoop:${trigger}`
+      source: `old_discover:${trigger}`
     });
 
     document.querySelector('input').focus();

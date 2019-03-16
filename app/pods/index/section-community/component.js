@@ -45,7 +45,7 @@ export default Component.extend({
     if (this.get('didSubmit')) {
       return this.get('share')({
         platform: 'facebook',
-        source: `shopcoop:${trigger}`
+        source: `old_discover:${trigger}`
       });
     } else {
       return this.get('focusForm')(trigger);

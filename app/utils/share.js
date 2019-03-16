@@ -8,7 +8,7 @@ export default function share(platform) {
       return open('https://www.facebook.com/v2.12/dialog/share', {
         app_id: FACEBOOK_APP_ID,
         display: 'popup',
-        href: 'https://karmacoop.org/shopcoop',
+        href: 'https://karmacoop.org/old_discover',
         quote: `I just signed up to trial shop at Karma Co-op. Come check it out with me!` // eslint-disable-line max-len
       });
   }
