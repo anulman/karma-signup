@@ -49,15 +49,6 @@ module.exports = function(environment) {
 
     sentry: {
       dsn: 'https://d2c7984596214f0694da81ca20dc8e90@sentry.io/303935'
-    },
-
-    firebase: {
-      apiKey: "AIzaSyBkk_vXl136w9P-7CpEOksiTo8hk81ceOU",
-      authDomain: "karma-signups.firebaseapp.com",
-      databaseURL: "https://karma-signups.firebaseio.com",
-      projectId: "karma-signups",
-      storageBucket: "karma-signups.appspot.com",
-      messagingSenderId: "576293640418"
     }
   };
 

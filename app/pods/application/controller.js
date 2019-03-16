@@ -20,7 +20,6 @@ const Validations = buildValidations({
 
 export default Controller.extend(Validations, {
   fingerprintjs: service(),
-  firebase: service(),
   metrics: service(),
   router: service(),
 
